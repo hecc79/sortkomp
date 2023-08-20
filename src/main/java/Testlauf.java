@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class Testlauf {
 
-	private final SortierAlgorithmus alg;
+	private final Sortieralgorithmus alg;
 
 	private final Vorsortierung sort;
 
@@ -23,8 +23,8 @@ public class Testlauf {
 	private final long[] vergleiche;
 	private final long[] vertauschungen;
 
-	public Testlauf(SortierAlgorithmus alg, Vorsortierung sort, String[] arr,
-			int min, int max, int step) {
+	public Testlauf(Sortieralgorithmus alg, Vorsortierung sort, String[] arr,
+					int min, int max, int step) {
 		super();
 		this.alg = alg;
 		this.sort = sort;
@@ -51,8 +51,21 @@ public class Testlauf {
 		}
 
 	}
-	
-	/**
+
+    public static void starteTestlauf(Sortieralgorithmus algorithmus, Vorsortierung vorsortierung,
+									  int min, int max, int step, String dateiname) {
+        Writer writer;
+        try {
+            writer = new BufferedWriter(new FileWriter(dateiname));
+        } catch (IOException e) {
+            throw new RuntimeException("Ausgabefehler: " + e);
+        }
+
+        Testlauf lauf = new Testlauf(algorithmus, vorsortierung, new StringArrayGenerator().erzeugeStringArray(), min, max, step);
+        lauf.exportiereDaten(writer);
+    }
+
+    /**
 	 * Exportiert die gesammelten Daten in eine CSV Textdatei.
 	 * 
 	 * @param dateiname

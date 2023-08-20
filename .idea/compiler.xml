@@ -9,8 +9,5 @@
         <module name="sortkomp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="sortkomp" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

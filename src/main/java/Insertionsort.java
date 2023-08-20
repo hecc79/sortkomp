@@ -1,5 +1,5 @@
 
-public class Insertionsort extends SortierAlgorithmus {
+public class Insertionsort extends Sortieralgorithmus {
 
 	@Override
 	public void sortiereArray(String[] arr) {

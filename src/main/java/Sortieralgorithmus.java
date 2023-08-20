@@ -3,11 +3,11 @@
  *
  * @author hecc79 Christian Hecker
  */
-public abstract class SortierAlgorithmus {
+public abstract class Sortieralgorithmus {
 
     private int schreiboperationen, leseoperationen, vergleiche, vertauschungen;
 
-    public SortierAlgorithmus() {
+    public Sortieralgorithmus() {
         reset();
     }
 
@@ -52,7 +52,7 @@ public abstract class SortierAlgorithmus {
     /**
      * Sortiert das Array arr aufsteigend. Diese Methode muss in allen erbenden
      * Klassen implementiert werden. Bei der Implementierung ist darauf zu
-     * achten, dass die Methoden zur Operationszaehlung verwendet werden.
+     * achten, dass die Methoden zur Operationszählung verwendet werden.
      *
      * @param arr zu sortierendes Array
      */
@@ -72,7 +72,7 @@ public abstract class SortierAlgorithmus {
     }
 
     /**
-     * Vergleicht zwei Strings a <= b, protokolliert dabei die Operationen
+     * Vergleicht zwei Strings a ≤ b, protokolliert dabei die Operationen
      *
      * @param a String a
      * @param b String b
@@ -85,24 +85,24 @@ public abstract class SortierAlgorithmus {
 
     /**
      * Vertauscht im Array arr die Werte an Position i mit denen der Position j.
-     * Die Vertauschung wird als eine Vertauschungsoperation gezaehlt.
+     * Die Vertauschung wird als eine Vertauschungsoperation gezählt.
      *
      * @param arr Das Array, in dem zwei Werte getauscht werden sollen.
-     * @param i   Eine gueltige Position in arr
-     * @param j   Eine gueltige Position in arr != i
+     * @param i   Eine gültige Position in arr
+     * @param j   Eine gültige Position in arr != i
      */
     public void vertausche(String[] arr, int i, int j) {
-        // Ueberpruefung der Parameter
+        // Überprüfung der Parameter
         if ((i > arr.length) || (i < 0) || (j > arr.length) || (j < 0) || (i == j)) {
             throw new IllegalArgumentException(i + " " + j);
         }
 
-        // Fuehre Vertauschung durch
+        // Führe Vertauschung durch
         String swp = arr[i];
         arr[i] = arr[j];
         arr[j] = swp;
 
-        // Zaehle Vertauschung
+        // Zähle Vertauschung
         this.zaehleVertauschung();
     }
 
@@ -111,7 +111,7 @@ public abstract class SortierAlgorithmus {
     }
 
     public void zaehleLeseoperationen(int anzahl) {
-        // Ueberpruefung der Parameter
+        // Überprüfung der Parameter
         if (anzahl <= 1) {
             throw new IllegalArgumentException();
         }
@@ -131,7 +131,7 @@ public abstract class SortierAlgorithmus {
     }
 
     public void zaehleVergleiche(int anzahl) {
-        // Ueberpruefung der Parameter
+        // Überprüfung der Parameter
         if (anzahl < 1) {
             throw new IllegalArgumentException();
         }
@@ -144,7 +144,7 @@ public abstract class SortierAlgorithmus {
     }
 
     public void zaehleVertauschungen(int anzahl) {
-        // Ueberpruefung der Parameter
+        // Überprüfung der Parameter
         if (anzahl < 1) {
             throw new IllegalArgumentException();
         }

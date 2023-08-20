@@ -20,7 +20,7 @@ public class TesteAlgorithmen {
 		return result;
 	}
 	
-	private void algorithmTest(SortierAlgorithmus a) {
+	private void algorithmTest(Sortieralgorithmus a) {
 		String[] arr = Arrays.copyOf(inputs, inputs.length);
 		System.out.println(Arrays.toString(arr));
 		a.sortiereArray(arr);
@@ -34,7 +34,7 @@ public class TesteAlgorithmen {
 
 	@Test
 	public void testQuicksort() {
-		algorithmTest(new Quicksort());
+		algorithmTest(new QuicksortPivotRandom());
 	}
 	
 //	@Test

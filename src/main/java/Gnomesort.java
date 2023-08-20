@@ -2,7 +2,7 @@
 
 
 
-public class Gnomesort extends SortierAlgorithmus {
+public class Gnomesort extends Sortieralgorithmus {
 
 	@Override
 	public void sortiereArray(String[] arr) {

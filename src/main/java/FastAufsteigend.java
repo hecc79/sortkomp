@@ -1,16 +1,16 @@
 import java.util.Random;
 
 /**
- * Die Daten sind fast absteigend vorsortiert. Ca. 10% der Einträge werden paarweise vertauscht.
+ * Die Daten sind fast absteigend vorsortiert. Ca. 10 % der Einträge werden paarweise vertauscht.
  *
  * @author hecc79 Christian Hecker
  */
-public class FastAbsteigend implements Vorsortierung {
+public class FastAufsteigend implements Vorsortierung {
 
     @Override
     public void sortiereVor(String[] arr) {
         // Sortiere das Array zunächst absteigend.
-        (new Absteigend()).sortiereVor(arr);
+        (new Aufsteigend()).sortiereVor(arr);
 
         Random random = new Random();
 

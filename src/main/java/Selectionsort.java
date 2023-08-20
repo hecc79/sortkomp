@@ -2,7 +2,7 @@
 
 
 
-public class Selectionsort extends SortierAlgorithmus {
+public class Selectionsort extends Sortieralgorithmus {
 
 
 	@Override

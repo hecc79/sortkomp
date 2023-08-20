@@ -1,16 +1,25 @@
-public class Quicksort extends SortierAlgorithmus {
+public abstract class AbtractQuicksort extends Sortieralgorithmus {
+    protected abstract int getPivot(String[] arr, int links, int rechts);
 
+    @Override
     public void sortiereArray(String[] arr) {
-		sort(arr, 0, arr.length - 1);
+        sort(arr, 0, arr.length - 1);
     }
 
+    /**
+     * Eigentliche Implementierung des Quicksort
+     *
+     * @param arr    Das zu sortierende Feld
+     * @param links  Index des linken Bereichsendes
+     * @param rechts Index des rechten Bereichsendes
+     */
     private void sort(String[] arr, int links, int rechts) {
 
         if (rechts - links <= 0) {
             return;
         }
-        int pivot = (int) ((Math.random() * (rechts - links)) + links);
-        // int pivot = (rechts+links)/2;
+        int pivot = getPivot(arr, links, rechts);
+
         if (pivot != rechts) {
             vertausche(arr, pivot, rechts);
         }
@@ -37,5 +46,4 @@ public class Quicksort extends SortierAlgorithmus {
         sort(arr, links, l - 1);
         sort(arr, r + 1, rechts);
     }
-
 }

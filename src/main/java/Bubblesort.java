@@ -2,7 +2,7 @@
 
 
 
-public class Bubblesort extends SortierAlgorithmus {
+public class Bubblesort extends Sortieralgorithmus {
 
 	@Override
 	public void sortiereArray(String[] arr) {
