@@ -5,7 +5,7 @@ import java.util.Random;
  *
  * @author hecc79 Christian Hecker
  */
-public class FastAbsteigend implements Vorsortierung {
+public class FastAbsteigend extends Vorsortierung {
 
     @Override
     public void sortiereVor(String[] arr) {

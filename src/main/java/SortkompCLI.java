@@ -67,18 +67,16 @@ public class SortkompCLI {
                 throw new ParseException("Ungültige Schrittweite");
             }
 
-            try {
-                algorithmus = (Sortieralgorithmus) Class.forName(line.getOptionValue("algo")).getDeclaredConstructor().newInstance();
-            } catch (Exception e) {
-                throw new ParseException("Ungültiger Algorithmus(" + e + ")");
+            algorithmus = Sortieralgorithmus.getSortieralgorithmus(line.getOptionValue("algo"));
+            if (algorithmus == null) {
+                throw new ParseException("Ungültiger Algorithmus(" + line.getOptionValue("algo") + ")");
             }
 
-            try {
-                vorsortierung = (Vorsortierung) Class.forName(line.getOptionValue("sort")).getDeclaredConstructor().newInstance();
-            } catch (Exception e) {
-
-                throw new ParseException("Ungültige Vorsortierung (" + e + ")");
+            vorsortierung = Vorsortierung.getVorsortierung(line.getOptionValue("sort"));
+            if (vorsortierung==null){
+                throw new ParseException("Ungültige Vorsortierung (" + line.getOptionValue("sort") + ")");
             }
+
             if (line.hasOption("file")) {
                 String dateiname = line.getOptionValue("file");
                 if ((new File(dateiname)).exists()) {

@@ -6,7 +6,7 @@ import java.util.Arrays;
  *
  * @author hecc79 Christian Hecker
  */
-public class Aufsteigend implements Vorsortierung {
+public class Aufsteigend extends Vorsortierung {
     @Override
     public void sortiereVor(String[] arr) {
         Arrays.sort(arr);

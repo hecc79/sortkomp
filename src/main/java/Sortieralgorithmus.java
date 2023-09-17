@@ -153,4 +153,13 @@ public abstract class Sortieralgorithmus {
         schreiboperationen += anzahl * 3;
     }
 
+    public static Sortieralgorithmus getSortieralgorithmus(String klassenname) {
+        try {
+            return (Sortieralgorithmus) Class.forName(klassenname).getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            return null;
+        }
+
+    }
+
 }

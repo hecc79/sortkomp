@@ -6,12 +6,20 @@
  *
  * @author hecc79 Christian Hecker
  */
-public interface Vorsortierung {
+public abstract class Vorsortierung {
     /**
      * Sortiert das übergebene Feld arr vor, bevor die Sortieralgorithmen die Daten sortieren.
      *
      * @param arr Das vorzusortierende Feld
      */
-    void sortiereVor(String[] arr);
+    public abstract void sortiereVor(String[] arr);
+
+    public static Vorsortierung getVorsortierung(String klassenname) {
+        try {
+            return (Vorsortierung) Class.forName(klassenname).getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
 }

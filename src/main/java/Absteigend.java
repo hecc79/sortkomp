@@ -3,7 +3,7 @@ import java.util.Arrays;
 /**
  * Die Daten werden aufsteigend vorsortiert.
  */
-public class Absteigend implements Vorsortierung {
+public class Absteigend extends Vorsortierung {
 
 	@Override
 	public void sortiereVor(String[] arr) {
